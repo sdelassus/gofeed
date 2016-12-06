@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mmcdole/gofeed.svg?branch=master)](https://travis-ci.org/mmcdole/gofeed) [![Coverage Status](https://coveralls.io/repos/github/mmcdole/gofeed/badge.svg?branch=master)](https://coveralls.io/github/mmcdole/gofeed?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/mmcdole/gofeed)](https://goreportcard.com/report/github.com/mmcdole/gofeed) [![](https://godoc.org/github.com/mmcdole/gofeed?status.svg)](http://godoc.org/github.com/mmcdole/gofeed) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
-The `gofeed` library is a robust feed parser that supports parsing both [RSS](https://en.wikipedia.org/wiki/RSS) and [Atom](https://en.wikipedia.org/wiki/Atom_(standard)) feeds.  The universal ```gofeed.Parser``` will parse and convert all feed types into a hybrid ```gofeed.Feed``` model.  You also have the option of parsing them into their respective ```atom.Feed``` and ```rss.Feed``` models using the feed specific ```atom.Parser``` or ```rss.Parser```.  
+The `gofeed` library is a robust feed parser that supports parsing both [RSS](https://en.wikipedia.org/wiki/RSS) and [Atom](https://en.wikipedia.org/wiki/Atom_(standard)) feeds.  The universal `gofeed.Parser` will parse and convert all feed types into a hybrid `gofeed.Feed` model.  You also have the option of parsing them into their respective `atom.Feed` and `rss.Feed` models using the feed specific `atom.Parser` or `rss.Parser`.
 
 ##### Supported feed types:
 * RSS 0.90
@@ -37,7 +37,7 @@ The universal `gofeed.Parser` works in 3 stages: detection, parsing and translat
 
 ![Diagram](https://raw.githubusercontent.com/mmcdole/gofeed/master/docs/sequence.png)
 
-The translation step is done by anything which adheres to the `gofeed.Translator` interface.  The `DefaultRSSTranslator` and `DefaultAtomTranslator` are used behind the scenes when you use the `gofeed.Parser` with its default settings.  You can see how they translate fields from ```atom.Feed``` or ```rss.Feed``` to the universal ```gofeed.Feed``` struct in the [Default Mappings](#default-mappings) section.  However, should you disagree with the way certain fields are translated you can easily supply your own `gofeed.Translator` and override this behavior.  See the [Advanced Usage](#advanced-usage) section for an example how to do this.
+The translation step is done by anything which adheres to the `gofeed.Translator` interface.  The `DefaultRSSTranslator` and `DefaultAtomTranslator` are used behind the scenes when you use the `gofeed.Parser` with its default settings.  You can see how they translate fields from `atom.Feed` or `rss.Feed` to the universal `gofeed.Feed` struct in the [Default Mappings](#default-mappings) section.  However, should you disagree with the way certain fields are translated you can easily supply your own `gofeed.Translator` and override this behavior.  See the [Advanced Usage](#advanced-usage) section for an example how to do this.
 
 #### Feed Specific Parsers
 
@@ -49,7 +49,7 @@ However, for the *vast* majority of users, the universal `gofeed.Parser` is the 
 
 #### Universal Feed Parser
 
-The most common usage scenario will be to use ```gofeed.Parser``` to parse an arbitrary RSS or Atom feed into the hybrid ```gofeed.Feed``` model.  This hybrid model allows you to treat RSS and Atom feeds the same.
+The most common usage scenario will be to use `gofeed.Parser` to parse an arbitrary RSS or Atom feed into the hybrid `gofeed.Feed` model.  This hybrid model allows you to treat RSS and Atom feeds the same.
 
 ##### Parse a feed from an URL:
 
@@ -196,7 +196,7 @@ A best-effort attempt is made at parsing broken and invalid XML feeds.  Currentl
 
 ## Default Mappings
 
-The ```DefaultRSSTranslator``` and the ```DefaultAtomTranslator``` map the following ```rss.Feed``` and ```atom.Feed``` fields to their respective ```gofeed.Feed``` fields.  They are listed in order of precedence (highest to lowest):
+The `DefaultRSSTranslator` and the `DefaultAtomTranslator` map the following `rss.Feed` and `atom.Feed` fields to their respective `gofeed.Feed` fields.  They are listed in order of precedence (highest to lowest):
 
 
 `gofeed.Feed` | RSS | Atom
